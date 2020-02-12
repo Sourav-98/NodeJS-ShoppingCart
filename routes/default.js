@@ -3,7 +3,10 @@ const routes = express.Router();
 
 const path = require('path');
 
-const renderpath = path.join(__dirname, '..', 'public', 'views');
+//const renderpath = path.join(__dirname, '..', 'public', 'views');
+
+
+routes.use(express.static(path.join(__dirname, '..', 'public')));
 
 routes.get('/', (req, res)=>{
     res.render('index', {pageTitle: "Home", pagePath: "/"});
