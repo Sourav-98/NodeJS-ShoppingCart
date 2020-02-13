@@ -1,7 +1,7 @@
 <%- include('../includes/header') %>
-<%- include('../includes/navigation'); %>
+<%- include('../includes/navigation') %>
 
-<div class="containter-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -9,15 +9,15 @@
                 <% if(products.length===0) { %>
                 <h4 class="card-title">No Products To Show!</h4>
                 <% } else {%>
-                <h4>Products List</h4>
+                <h4 class="card=title">Products List</h4>
                 <div class="card-body">
                     <ul class="list-group">
                         <%  for (var i=0; i<products.length; i++) { %>
-                            <li class="list-group-item"><%=products[i]%></li>
+                        <li class="list-group-item"><%=products[i]%></li>
                         <%  } %>
                     </ul>
                 </div>
-            <% } %>
+                <% } %>       
             </div>
         </div>
         <div class="col-md-3"></div>

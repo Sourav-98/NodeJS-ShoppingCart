@@ -29,6 +29,10 @@ routes.post('/add-product', (req, res)=>{
     res.redirect('/admin');
 });
 
+routes.get('/prod-list', (req, res)=>{
+    res.render('shop/view-products', {pageTitle:"Product List", pagePath:"/admin/prod-list", products: products});
+});
+
 routes.use((req, res)=>{
     res.render('includes/body-404', {pageTitle: "404", pagePath:"err404"});
 });
