@@ -1,0 +1,9 @@
+<div class="card">
+    <img class="card-img-top" src="<%=prod.productImageURL%>" alt="Product Image"/>
+    <div class="card-title"><%=prod.productName%></div>
+    <div class="card-body"><%=prod.productDesc%></div>
+    <form method="POST" action="/shop/add-to-cart">
+        <input hidden type="text" name="productID" value="<%=prod.productID%>"/>
+        <button type="submit" class="btn btn-primary">Add To Cart</button>
+    </form>
+</div>
