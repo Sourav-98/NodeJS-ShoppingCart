@@ -1,9 +1,22 @@
-<div class="card">
+<div class="card item-card">
     <img class="card-img-top" src="<%=prod.productImageURL%>" alt="Product Image"/>
-    <div class="card-title"><%=prod.productName%></div>
-    <div class="card-body"><%=prod.productDesc%></div>
-    <form method="POST" action="/shop/add-to-cart">
-        <input hidden type="text" name="productID" value="<%=prod.productID%>"/>
-        <button type="submit" class="btn btn-primary">Add To Cart</button>
-    </form>
+    <h4 class="card-title"><%=prod.productName%></h4>
+    <div class="card-body">
+        <h5 class="card-title">Price: &#8377; <%=prod.productPrice%></h5>
+        <%=prod.productDesc%>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-4">
+            <a href="/shop/<%=prod.productID%>" class="btn btn-primary btn-block">Details</a>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <form method="POST" action="/shop/add-to-card">
+                <input hidden type="text" name="productID" value="<%=prod.productID%>"/>
+                <button type="submit" class="btn btn-danger btn-block">Add to Cart</button>
+            </form>
+        </div>
+        <div class="col-1"></div>
+    </div>
 </div>

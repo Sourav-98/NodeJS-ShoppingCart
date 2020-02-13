@@ -3,12 +3,11 @@ const routes = express.Router();
 const bodyParser = require('body-parser');
 
 const productController = require('../controllers/productController');
-const products = require('./admin').products;
+//const products = require('./admin').products;
 
 const path = require('path');
 
 routes.use(express.static(path.join(__dirname, '..', 'public')));
-
 
 routes.get('/', (req, res)=>{
     res.render('shop/home', {pageTitle: "Shop Home", pagePath: "/shop"});
@@ -22,5 +21,7 @@ routes.post('/add-to-cart', (req, res)=>{
     res.redirect('/shop/prod-list');
 });
 
+
+routes.get('/:p_id', productController.get_ProductDetails);
 
 module.exports = routes;

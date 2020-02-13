@@ -20,10 +20,16 @@ exports.get_ManageProducts = (req, res)=>{
     res.render('admin/manage-products', {pageTitle:"Product List", pagePath:"/admin/manage", products: Product.fetchAll()});
 }
 
-
 exports.get_DeleteProduct = (req, res)=>{
     var p_id = req.body.productID;
     console.log(p_id);
     Product.delete(p_id);
     res.redirect('/admin/manage');
+}
+
+exports.get_ProductDetails = (req, res)=>{
+    console.log(req.params.p_id);
+    var product = Product.fetch(req.params.p_id);
+    //console.log(product);
+    res.render('shop/product-details', {pageTitle: product.productName, pagePath:"/shop", product: product});
 }

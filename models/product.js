@@ -24,6 +24,16 @@ module.exports = class Product{
         return prod_list;
     }
 
+    static fetch(p_id){
+        for(var i=0; i<prod_list.length; i++){
+            //console.log(prod_list[i], i);
+            //console.log(prod_list[i].productID, p_id);
+            if(prod_list[i].productID == p_id){
+                return prod_list[i];
+            }
+        }
+    }
+
     static delete(p_id){
         prod_list = prod_list.filter((item)=>{
             return item.productID!=p_id;    // return true for all other products except the one to be deleted
