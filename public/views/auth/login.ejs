@@ -1,0 +1,26 @@
+<%- include('../includes/header') %>
+<%- include('../includes/navigation') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="border: 0.5px solid darkgray; border-radius: 8px; padding: 30px; box-shadow: 1px 1px 5px grey;
+        ">
+            <form method="POST" action="#">
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input class="form-control" type="text" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="email">Password</label>
+                    <input class="form-control" type="password" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+<%- include('../includes/footer') %>

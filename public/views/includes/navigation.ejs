@@ -15,5 +15,18 @@
                 <a class="nav-link" href="/shop">Shop</a>
             </li>
         </ul>
+        <ul class="navbar-nav">
+
+            <% if(isLoggedIn==undefined){ %>
+            <li class="nav-item <%= pagePath.startsWith('/login') ? 'active': ''%>">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+
+        <%} else {%>
+            <li class="nav-item <%= pagePath.startsWith('/logout') ? 'active': ''%>">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        <% } %>
+        </ul>
     </div>
 </nav>
